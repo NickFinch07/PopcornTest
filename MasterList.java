@@ -7,7 +7,8 @@ public class MasterList {
         orders = new ArrayList<PopcornOrder>();
     }
 
-    public void addOrder(PopcornOrder newOrder) {
+    public void addOrder(String food, int value) {
+        PopcornOrder newOrder = new PopcornOrder(food, value);
         orders.add(newOrder);
     }
 
@@ -21,7 +22,7 @@ public class MasterList {
 
     public int removeVariety(String keyword) {
         int total = 0;
-        for (int i = orders.size(); i > 0; i--) {
+        for (int i = orders.size() - 1; i > 0; i--) {
             if (orders.get(i).getVariety().equals(keyword)) {
                 total += orders.get(i).getNumOrdered();
                 orders.remove(i);
@@ -32,15 +33,7 @@ public class MasterList {
     // Continued on next page
 
     public String toString() {
-        String temp = "";
-        if (orders.size() != 0) {
-            for (int i = 0; i < orders.size(); i++) {
-                temp += orders.get(i) + ", ";
-            }
-        }
-        else {
-            return "There are no orders.";
-        }
+        return orders.toString();
     }
     
 }   // end class

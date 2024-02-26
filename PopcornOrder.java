@@ -16,4 +16,13 @@ public class PopcornOrder {
         return numOrdered;
     }
 
+    public String toString() {
+        if (numOrdered != 0) {
+            return ("Variety :" + variety + " Number Ordered: " + numOrdered);
+        }
+        else {
+            return ("There are no orders.");
+        }
+    }
+
 } 
